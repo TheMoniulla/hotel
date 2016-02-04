@@ -1,0 +1,20 @@
+%h1 Guests
+= link_to 'New guest', new_admin_guest_path, class: 'btn btn-success'
+
+%table.table.table-striped
+  %tr
+    %th Last name
+    %th First name
+    %th Telephone number
+    %th E-mail
+    %th Actions
+  - @guests.each do |guest|
+    %tr
+      %td= guest.last_name
+      %td= guest.first_name
+      %td= guest.telephone_number
+      %td= guest.email
+      %td
+        = link_to 'Show', admin_guest_path(guest)
+        = link_to 'Edit', edit_admin_guest_path(guest)
+        = link_to 'Delete', admin_guest_path(guest), method: :delete, data: {confirm: 'Are you sure?'}

@@ -1,0 +1,16 @@
+%h1 My reservations
+
+%table.table.table-striped
+  %tr
+    %th Room
+    %th Reservation date
+    %th Actions
+  - @reservations.each do |reservation|
+    %tr
+      %td= reservation.room.name
+      %td= reservation.reservation_date
+      %td
+        = link_to 'Edit'
+        = link_to 'Delete'
+
+= link_to 'Back', guest_path(@guest)

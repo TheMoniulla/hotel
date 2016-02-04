@@ -1,0 +1,16 @@
+%h2= @room.name
+
+%p
+  %b Beds:
+  = @room.beds
+
+%p
+  %b Additional bed:
+  = @room.additional_bed ? 'yes' : 'no'
+
+%p
+  %b Double bed:
+  = @room.double_bed ? 'yes' : 'no'
+
+%p= link_to 'Back to list', guest_rooms_path
+%p= link_to 'Go to reservation', guest_path(@guest, room_id: @room.id)

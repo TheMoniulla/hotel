@@ -1,0 +1,10 @@
+= link_to 'All Rooms', guest_rooms_path(@guest)
+
+%h1 Which room would you like to book?
+
+= simple_form_for [@guest, @reservation] do |f|
+  = f.input :room_id, collection: Room.all.map{|r| [r.to_s, r.id]}, include_blank: false, selected: @room_id
+  = f.input :reservation_date
+  = f.submit
+
+= link_to 'Back', root_path

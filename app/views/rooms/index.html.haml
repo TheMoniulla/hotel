@@ -1,0 +1,8 @@
+%h1 Choose your room:
+
+%ul
+  -@rooms.each do |room|
+    %li
+      = link_to room.name, guest_room_path(@guest, room)
+
+= link_to 'Back', guest_path(@guest)

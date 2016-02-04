@@ -1,0 +1,15 @@
+%p
+  %b Name:
+  = @room.name
+
+%p
+  %b Beds:
+  = @room.beds
+
+%p
+  %b Additional bed:
+  = @room.additional_bed ? 'yes' : 'no'
+
+%p
+  %b Double bed:
+  = @room.double_bed ? 'yes' : 'no'

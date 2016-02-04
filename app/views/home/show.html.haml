@@ -1,0 +1,6 @@
+%h1 Welcome to our hotel!
+
+%ul
+  -@guests.each do |guest|
+    %li
+      = link_to "#{guest.last_name} #{guest.first_name}", guest_path(guest)

@@ -1,0 +1,20 @@
+%h1 Rooms
+= link_to 'New room', new_admin_room_path, class: 'btn btn-success'
+
+%table.table.table-striped
+  %tr
+    %th Name
+    %th Beds
+    %th Additional bed
+    %th Double bed
+    %th Actions
+  - @rooms.each do |room|
+    %tr
+      %td= room.name
+      %td= room.beds
+      %td= room.additional_bed ? 'yes' : 'no'
+      %td= room.double_bed ? 'yes' : 'no'
+      %td
+        = link_to 'Show', admin_room_path(room)
+        = link_to 'Edit', edit_admin_room_path(room)
+        = link_to 'Delete', admin_room_path(room), method: :delete, data: {confirm: 'Are you sure?'}
